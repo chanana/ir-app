@@ -79,11 +79,7 @@ def smiles_to_grid_png(sample_name_list):
         smiles.loc[i, "Trivial name"] if i in smiles.index else "None"
         for i in sample_name_list
     ]
-    grid = Chem.Draw.MolsToGridImage(
-        mols=mols,
-        legends=legends,
-        molsPerRow=5,
-    )
+    grid = Chem.Draw.MolsToGridImage(mols=mols, legends=legends, molsPerRow=5)
     grid.save("img/mol.png")
 
 
@@ -107,8 +103,7 @@ app.layout = dbc.Tabs(
                 dbc.Container(
                     [
                         html.Div(
-                            [
-                                # dataset selection + submit button
+                            [  # dataset selection + submit button
                                 dbc.Container(
                                     [
                                         dbc.Row(
@@ -244,7 +239,7 @@ app.layout = dbc.Tabs(
                                                     width=4,
                                                 ),
                                             ]
-                                        ),
+                                        )
                                     ],
                                     className="border border-secondary",
                                     fluid=True,
@@ -275,7 +270,7 @@ app.layout = dbc.Tabs(
                                                                 "display": "block",
                                                                 "height": "800px",
                                                             },
-                                                        ),
+                                                        )
                                                     ],
                                                     width=6,
                                                 ),
@@ -429,7 +424,7 @@ app.layout = dbc.Tabs(
                                                         )
                                                     ],
                                                     width=12,
-                                                ),
+                                                )
                                             ]
                                         )
                                     ],
@@ -449,7 +444,7 @@ app.layout = dbc.Tabs(
                                                         )
                                                     ],
                                                     style={"display": "none"},
-                                                ),
+                                                )
                                             ]
                                         )
                                     ],
